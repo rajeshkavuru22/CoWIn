@@ -1,0 +1,48 @@
+.bg-container {
+  background-color: #161625;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  overflow: auto;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.name {
+  color: #2cc6c6;
+  font-size: 25px;
+  font-weight: bold;
+}
+.heading {
+  color: #ffffff;
+  font-size: 30px;
+}
+.image {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.loader {
+  align-self: center;
+}
+.failureMsg {
+  color: #ffffff;
+  font-size: 30px;
+  margin-top: 20px;
+}

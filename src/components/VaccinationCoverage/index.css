@@ -1,0 +1,13 @@
+.container {
+  background-color: #1c1c2b;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.head {
+  color: #cbd5e1;
+  font-size: 22px;
+  margin-bottom: 40px;
+}
