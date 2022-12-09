@@ -6,12 +6,12 @@ import VaccinationByAge from '../VaccinationByAge'
 
 import './index.css'
 
-const apiResponsesList = [
-  {success: 'SUCCESS'},
-  {failure: 'FAILURE'},
-  {initial: 'INITIAL'},
-  {inProgress: 'IN PROGRESS'},
-]
+const apiResponsesList = {
+  success: 'SUCCESS',
+  failure: 'FAILURE',
+  initial: 'INITIAL',
+  inProgress: 'IN PROGRESS',
+}
 
 class CowinDashboard extends Component {
   state = {
@@ -28,11 +28,8 @@ class CowinDashboard extends Component {
   getVaccinationData = async () => {
     this.setState({apiResponseStatus: apiResponsesList.inProgress})
     const vaccinationDataApiUrl = 'https://apis.ccbp.in/covid-vaccination-data'
-    const options = {
-      method: 'GET',
-    }
     const response = await fetch(vaccinationDataApiUrl)
-    if (response.ok === true) {
+    if (response.status === 200) {
       const data = await response.json()
       console.log(data)
       const totalVaccinationCoverage = data.last_7_days_vaccination.map(
@@ -89,13 +86,14 @@ class CowinDashboard extends Component {
 
   renderCowinData = () => {
     const {apiResponseStatus} = this.state
+    console.log(apiResponseStatus)
     switch (apiResponseStatus) {
+      case apiResponsesList.inProgress:
+        return this.renderLoader()
       case apiResponsesList.success:
         return this.successView()
       case apiResponsesList.failure:
         return this.failureView()
-      case apiResponsesList.inProgress:
-        return this.renderLoader()
       default:
         return null
     }

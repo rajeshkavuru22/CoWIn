@@ -11,3 +11,12 @@
   font-size: 22px;
   margin-bottom: 40px;
 }
+.pie-chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.chart {
+  align-self: center;
+}
